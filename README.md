@@ -37,7 +37,7 @@ By default, the server runs on `http://127.0.0.1:8000/`.
 ### Step 1: Create an Account
 Before making API requests, you must **create a user account** using the `/profile/` endpoint.
 
-#### Example Request (POST `/profile/`):
+#### Example Request (POST `/api/profile/`):
 ```
 {
     "email": "user@example.com",
@@ -46,9 +46,9 @@ Before making API requests, you must **create a user account** using the `/profi
 }
 ```
 ### Step 2: Log In & Get a Token
-Once your account is created, log in via the `/login/` endpoint to receive your **authentication token**.
+Once your account is created, log in via the `/api/login/` endpoint to receive your **authentication token**.
 
-#### Example Request (POST `/login/`):
+#### Example Request (POST `/api/login/`):
 ```
 {
     "username": "user@example.com",
@@ -68,14 +68,14 @@ Authorization: Token your-generated-token-here
 ```
 ## API Endpoints
 ### User Authentication
-- `POST /profile/` → Create a new user account
-- `POST /login/` → Get an authentication token
+- `POST /api/profile/` → Create a new user account
+- `POST /api/login/` → Get an authentication token
 ## Task Management (Requires Authentication)
-- `GET /tasks/` → View all tasks you have created
-- `POST /tasks/` → Create a new task
-- `GET /tasks/{id}/` → Get details of a specific task
-- `PUT /tasks/{id}/` → Update a task
-- `DELETE /tasks/{id}/` → Delete a task
+- `GET /api/tasks/` → View all tasks you have created
+- `POST /api/tasks/` → Create a new task
+- `GET /api/tasks/{id}/` → Get details of a specific task
+- `PUT /api/tasks/{id}/` → Update a task
+- `DELETE /api/tasks/{id}/` → Delete a task
 ## Database & Migrations
 - The first time you set up the project, **you must run migrations:**
 ```
